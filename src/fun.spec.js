@@ -1,4 +1,4 @@
-const { sum, div, sub, times } = require("./fun.js");
+const { sum, div, sub, times, square } = require("./fun.js");
 
 describe("Unit Test Functions", () => {
 
@@ -24,6 +24,12 @@ describe("Unit Test Functions", () => {
     const result = times(3, 5);
 
     expect(result).toBe(15)
+  });
+
+  test("shoudl be 3 to equal 9", () => {
+    const result = square(3);
+
+    expect(result).toBe(9)
   });
 
 });
