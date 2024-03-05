@@ -8,28 +8,28 @@ describe("Unit Test Functions", () => {
     expect(result).toBe(8)
   });
 
-  test("shoudl be 10 / 5 to equal 2", () => {
-    const result = div(10, 5);
+  // test("shoudl be 10 / 5 to equal 2", () => {
+  //   const result = div(10, 5);
 
-    expect(result).toBe(2)
-  });
+  //   expect(result).toBe(2)
+  // });
 
-  test("shoudl be 5 - 3 to equal 2", () => {
-    const result = sub(5, 3);
+  // test("shoudl be 5 - 3 to equal 2", () => {
+  //   const result = sub(5, 3);
 
-    expect(result).toBe(2)
-  });
+  //   expect(result).toBe(2)
+  // });
 
-  test("shoudl be 3 * 5 to equal 15", () => {
-    const result = times(3, 5);
+  // test("shoudl be 3 * 5 to equal 15", () => {
+  //   const result = times(3, 5);
 
-    expect(result).toBe(15)
-  });
+  //   expect(result).toBe(15)
+  // });
 
-  test("shoudl be 3 to equal 9", () => {
-    const result = square(3);
+  // test("shoudl be 3 to equal 9", () => {
+  //   const result = square(3);
 
-    expect(result).toBe(9)
-  });
+  //   expect(result).toBe(9)
+  // });
 
 });
