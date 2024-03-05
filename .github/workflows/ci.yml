@@ -24,6 +24,7 @@ jobs:
               GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
               SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             with:
-              args:
+              args: >
                 -Dsonar.projectKey=Anthony07M_desafio-node-sonarcloud
                 -Dsonar.organization=anthony07m
+                -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
