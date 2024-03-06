@@ -1,23 +1,20 @@
-name: ci-desafio-sonarcloud
 on:
-  pull_request:
+  push:
     branches:
-      - develop
-
+      - master
+  pull_request:
+      types: [opened, synchronize, reopened]
+name: Main Workflow
 jobs:
-  run-ci:
+  sonarcloud:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-      - run: npm install
-      - run: npm run test
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@1.8
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITH_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - uses: actions/checkout@v4
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITH_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
