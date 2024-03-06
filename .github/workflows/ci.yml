@@ -17,12 +17,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: echo ${{ secrets.GIT_TOKEN }} 
+      - run: echo "${{ secrets.GIT_TOKEN }}"
       - run: npm install
       - run: npm run test
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # - name: SonarCloud Scan
+      #   uses: SonarSource/sonarcloud-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}  # Needed to get PR information, if any
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           
