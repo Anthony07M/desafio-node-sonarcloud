@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: echo ${{ secrets.GIT_TOKEN }}
+      - run: echo ${{ secrets.GIT_TOKEN }} <= secret
       - run: npm install
       - run: npm run test
       # - name: SonarCloud Scan
