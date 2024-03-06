@@ -1,28 +1,22 @@
-name: check-application
-
+name: ci-desafio-sonarcloud
 on:
   pull_request:
-    branches: ["develop"]
-
-# permissions:
-#   pull-requests: read
+    branches:
+      - develop
 
 jobs:
-  build:
+  run-ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checktou
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node version 18
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: echo secrets
-      - run: npm install
-      - run: npm run test
-      # - name: SonarCloud Scan
-      #   uses: SonarSource/sonarcloud-github-action@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}  # Needed to get PR information, if any
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          
+          node-version: lts/*
+      - run: npm test
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITH_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
