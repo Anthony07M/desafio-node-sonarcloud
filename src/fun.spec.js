@@ -8,11 +8,11 @@ describe("Unit Test Functions", () => {
     expect(result).toBe(8)
   });
 
-  // test("shoudl be 10 / 5 to equal 2", () => {
-  //   const result = div(10, 5);
+  test("shoudl be 10 / 5 to equal 2", () => {
+    const result = div(10, 5);
 
-  //   expect(result).toBe(2)
-  // });
+    expect(result).toBe(2)
+  });
 
   // test("shoudl be 5 - 3 to equal 2", () => {
   //   const result = sub(5, 3);
