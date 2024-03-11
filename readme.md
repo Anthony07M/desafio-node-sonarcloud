@@ -35,6 +35,6 @@ Neste desafio, você irá consolidar seus conhecimentos em relação à criaçã
 ## Concluidos
    - 1 - OK
    - 2 - OK
-   - 3 - 
-   - 4 - 
-   - 5 - 
+   - 3 - OK
+   - 4 - OK
+   - 5 - OK

@@ -8,22 +8,19 @@ permissions:
   pull-requests: read
 
 jobs:
-    build:
+    status-check:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-node@v3
+          - uses: actions/checkout@v4
+          - uses: actions/setup-node@v4
             with:
               node-version: 18
           - run: npm install
           - run: npm run test
         
           - name: Analyze with SonarCloud
-            uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
+            uses: SonarSource/sonarcloud-github-action@master
             env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              GITHUB_TOKEN: ${{ secrets.GITH_TOKEN }}
               SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            with:
-              args:
-                -Dsonar.projectKey=Anthony07M_desafio-node-sonarcloud
-                -Dsonar.organization=anthony07m
+      
