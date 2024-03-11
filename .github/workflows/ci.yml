@@ -8,7 +8,7 @@ permissions:
   pull-requests: read
 
 jobs:
-    build:
+    status-check:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
           - run: npm install
           - run: npm run test
         
-          - name: Analyze with SonarCloud
+          - name: SonarCloud Scan
             uses: SonarSource/sonarcloud-github-action@master
             env:
               GITHUB_TOKEN: ${{ secrets.GITH_TOKEN }}
